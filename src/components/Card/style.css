@@ -1,0 +1,47 @@
+.card {
+	height: 100px;
+	background: #fff;
+	border-radius: 4px;
+	box-shadow: 0 3px 7px -1px #bfbfbf;
+	display: flex;
+	align-items: center;
+	padding: 10px;
+}
+
+.details {
+	margin-left: 10px
+}
+
+.detailText {
+	margin-bottom: 5px;
+	margin-top: 0;
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	max-width: 150px;
+}
+
+@media only screen and (max-width: 600px) {
+	.detailText {
+		max-width: 200px;
+	}
+} 
+
+@media only screen and (min-width: 600px) {
+	.detailText {
+		max-width: 200px;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	.detailText {
+		max-width: 150px;
+	}
+}
+
+/* .detailText:hover {
+    text-overflow: clip;
+    white-space: normal;
+    word-break: break-all;
+} */

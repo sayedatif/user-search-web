@@ -1,0 +1,26 @@
+.searchBox {
+	min-height: 44px;
+	padding: 10px;
+	border-radius: 24px;
+	border: 1px solid #dfe1e5;
+	box-shadow: none;
+	background-color: #fff;
+}
+
+@media only screen and (max-width: 600px) {
+	.searchBox {
+		width: 60%;
+	}
+} 
+
+@media only screen and (min-width: 600px) {
+	.searchBox {
+		width: 60%;
+	}
+} 
+
+@media only screen and (min-width: 992px) {
+	.searchBox {
+		width: 25%;
+	}
+}
