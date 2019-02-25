@@ -15,32 +15,30 @@ class App extends Component {
 		showWarning: false
 	}
 
-	search = () => {
+	search = async () => {
 		const { keyword } = this.state;
 		if (keyword.length < 3) {
+			// eslint-disable-next-line no-alert
 			alert('Keyword should be greater than equal to length 3');
 			return;
 		}
-		this.setState({
-			loading: true
-		}, async () => {
-			try {
-				const data = await request(`http://www.localhost.com:8081/search?keyword=${keyword.toLowerCase()}`);
-				const state = {
-					userData: data,
-					loading: false
-				};
-				if (data.length === 0) {
-					state.showWarning = true;
-				}
-				this.setState(state);
-			} catch (e) {
-				console.log('error occured', e);
-				this.setState({
-					loading: false
-				});
+		
+		this.setState({ loading: true });
+		try {
+			const data = await request(`http://www.localhost.com:8081/search?keyword=${keyword.toLowerCase()}`);
+			const state = {
+				userData: data,
+				loading: false
+			};
+			if (data.length === 0) {
+				state.showWarning = true;
 			}
-		});
+			this.setState(state);
+		} catch (e) {
+			// eslint-disable-next-line no-alert
+			alert('Error occured try after some time.');
+			this.setState({ loading: false });
+		}
 	}
 
 	handleOnChange = e => {
